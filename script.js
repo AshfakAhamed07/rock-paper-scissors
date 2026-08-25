@@ -12,11 +12,27 @@ function getComputerChoice() {
   const randomNum = Math.floor(Math.random() * 3) + 1;
 
   if (randomNum === 1) {
-    return "Rock";
+    return "rock";
   } else if (randomNum === 2) {
-    return "Paper";
+    return "paper";
   } else {
-    return "Scissors";
+    return "scissors";
   }
 }
-console.log(getComputerChoice());
+
+
+
+/*  
+Create a function named getHumanChoice.
+
+Prompt the user to enter their choice.
+
+Store the user's input.
+
+Return the user's choice.
+*/
+
+function getHumanChoice(){
+   const userChoice =  prompt('Please select one of Rock, paper or Scissors......').toLowerCase();
+   return userChoice;
+}
