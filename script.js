@@ -1,3 +1,8 @@
+// Create two new variables named humanScore and computerScore in the global scope.
+// Initialize those variables with the value of 0.
+let humanScore = 0;
+let computerScore = 0;
+
 /*
 Create a function named getComputerChoice.
 Generate a random number.
@@ -20,8 +25,6 @@ function getComputerChoice() {
   }
 }
 
-
-
 /*  
 Create a function named getHumanChoice.
 
@@ -32,7 +35,13 @@ Store the user's input.
 Return the user's choice.
 */
 
-function getHumanChoice(){
-   const userChoice =  prompt('Please select one of Rock, paper or Scissors......').toLowerCase();
-   return userChoice;
+function getHumanChoice() {
+  const userChoice = prompt(
+    "Choose rock, paper, or scissors:",
+  ).toLowerCase();
+  return userChoice;
 }
+
+
+
+
