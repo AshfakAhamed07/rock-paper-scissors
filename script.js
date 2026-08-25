@@ -79,3 +79,34 @@ function playRound(humanChoice, computerChoice) {
         console.log(`Computer Wins! ${computerChoice} beats ${playerSelection}`);
     }
 }
+
+
+function playGame(){
+    
+    for (let x = 1; x <= 5; x++) {
+        console.log(`--- ROUND ${x} ---`);
+        
+        // Fetch new choices for every iteration of the loop
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        
+        // Pass selections to the round evaluator
+        playRound(humanSelection, computerSelection);
+        
+        // Log current scores after the round
+        console.log(`Score -> You: ${humanScore} | Computer: ${computerScore}\n`);
+    }
+
+    // 4. Declare the ultimate winner at the end of 5 rounds
+    console.log("=== FINAL RESULTS ===");
+    if (humanScore > computerScore) {
+        console.log(`Congratulations! You win the game with a score of ${humanScore} to ${computerScore}!`);
+    } else if (computerScore > humanScore) {
+        console.log(`Game Over! The computer wins the game with a score of ${computerScore} to ${humanScore}.`);
+    } else {
+        console.log(`The entire game ended in a tie! Final score is ${humanScore} to ${computerScore}.`);
+    }
+}
+
+// Call the function to start the game!
+playGame();
