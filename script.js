@@ -43,5 +43,39 @@ function getHumanChoice() {
 }
 
 
+// Create a new function named playRound.
+// Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to take the human and 
+// computer choices as arguments.
+// Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”, or other
+//  variations.
+// Write the code for your playRound function to console.log a string value representing the round winner, such as: “You 
+// lose! Paper beats Rock”.
+// Increment the humanScore or computerScore variable based on the round winner.
+// Rock beats scissors, scissors beat paper, and paper beats rock
 
+// Step 4: Write the logic to play a single round
+function playRound(humanChoice, computerChoice) {
+    // Make the human input case-insensitive by parsing it locally
+    const playerSelection = humanChoice;
 
+    // 1. If both choices match, it's a draw
+    if (playerSelection === computerChoice) {
+        console.log(`It's a tie! Both chose ${playerSelection}.`);
+        return; // Exits the function early
+    }
+
+    // 2. If the player wins, update score and log the message
+    if (
+        (playerSelection === 'rock' && computerChoice === 'scissors') || 
+        (playerSelection === 'scissors' && computerChoice === 'paper') || 
+        (playerSelection === 'paper' && computerChoice === 'rock')
+    ) {
+        humanScore++;
+        console.log(`You Win! ${playerSelection} beats ${computerChoice}`);
+    } 
+    // 3. Otherwise, the computer wins. Update score and log message
+    else {
+        computerScore++;
+        console.log(`Computer Wins! ${computerChoice} beats ${playerSelection}`);
+    }
+}
